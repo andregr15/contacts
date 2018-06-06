@@ -1,2 +1,16 @@
 <h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<p>Id: <%= @contact.id %></p>
+<p>Name: <%= @contact.name %></p>
+
+<h3>Address</h3>
+<p>Street: <%= @contact.address.street %></p>
+<p>Number: <%= @contact.address.number %></p>
+<p>Neighborhood: <%= @contact.address.neighborhood %></p>
+
+<h3>Phones</h3>
+<ol>
+    <% @contact.phones.each do |p| %>  
+        <li><%= p.number %></li>
+    <% end %>
+</ol>
+<%= link_to 'Back', contacts_path %>
